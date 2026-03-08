@@ -1,30 +1,34 @@
 ﻿# Meeting Note
 
-## Cil workshopu
-Navrhnout novy interni system nebo produktovy modul, ktery zlepsi praci uzivatelu a zvysi efektivitu.
+### Cil workshopu
+Navrhnout novy interni system nebo produktovy modul, ktery zlepsi praci uzivatelu a prinese vyssi efektivitu.
 
-## Shrnuti diskuse
-- Soucasny stav je roztisteny: uzivatele pracuji ve vice systemech.
-- Cast cinnosti je manualni.
-- Chybi jednotny pohled na data.
-- Brainstorming navrhl konsolidaci krok, automatizaci rutiny, dashboard a integrace na existujici systemy.
+### Shrnuti diskuse
+- Fakt: Soucasny stav je roztisteny, uzivatele pracuji ve vice systemech.
+- Fakt: Cast cinnosti je manualni.
+- Fakt: Chybi jednotny pohled na data.
+- Fakt: Navrzene smery jsou sjednoceni kroku do jednoho rozhrani, automatizace rutin, dashboard a napojeni na existujici systemy.
+- Fakt: Uvedena omezeni jsou omezena kapacita vyvoje, nutnost vyuzit stavajici systemy a tlak na rychle MVP.
 
-## Identifikovane problemy
+### Identifikovane problemy
 - Fragmentovane workflow napric vice systemy.
-- Manualni cinnosti s potencialem ztraty efektivity.
-- Data nejsou centralne dostupna v jednom pohledu.
+- Vysoka mira manualnich cinnosti.
+- Nedostupnost klicovych dat v jednom centralnim pohledu.
 
-## Hlavni napady
-- Sjednotit vice kroku do jednoho rozhrani.
-- Automatizovat rutinni cinnosti.
-- Nabidnout dashboard se stavem.
-- Napojit reseni na stavajici systemy.
+### Hlavni napady
+- Jednotne rozhrani pro vice kroku procesu.
+- Automatizace rutinnich cinnosti.
+- Dashboard s prehledem stavu.
+- Integrace na existujici produkty.
 
-## Otevrene otazky
-- Kdo je hlavni cilovy uzivatel v prvni fazi?
-- Ktera data jsou prioritni pro MVP?
+### Otevrene otazky
+- Kdo bude hlavni uzivatel?
+- Jaka data budou prioritni?
 - Ktere integrace jsou povinne v prvni fazi?
-- Jaky je presny scope MVP pri omezene kapacite vyvoje?
+
+## Predpoklady
+- Predpoklad: Brainstorming se tyka rozvoje nad stavajicim portfoliem FLEETWARE, ROAD PLAN a PASPORT.
+- Predpoklad: MVP ma byt realizovano inkrementalne, nikoli jako plna nahrada existujicich systemu.
 
 ## Zdroje
 - inputs/meeting_transcript.md

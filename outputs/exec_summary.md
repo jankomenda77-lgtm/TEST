@@ -1,37 +1,42 @@
 ﻿# Executive Summary
 
-## Problem
-Prace uzivatelu je roztistena mezi vice systemu, cast procesu je manualni a chybi jednotny pohled na klicova data.
+### Problem
+Procesy jsou roztistene mezi vice systemy, cast cinnosti je manualni a chybi centralni pohled na klicova data.
 
-## Navrzene reseni
-Lehka nadstavba nad existujicimi produkty (FLEETWARE, ROAD PLAN, PASPORT):
-- jednotne rozhrani pro hlavni workflow,
+### Navrzene reseni
+MVP nadstavba nad FLEETWARE, ROAD PLAN a PASPORT:
+- jednotne UI pro prioritni use-case,
+- orchestrace pres existujici REST API,
 - dashboard s centralnim pohledem,
-- postupna automatizace rutinnich cinnosti,
-- integrace pres existujici REST API.
+- omezena automatizace vybrane rutinni cinnosti.
 
-## Prinosy
-- Vyssi efektivita prace uzivatelu.
-- Lepsi prehled nad stavem procesu a daty.
-- Soulad se strategii firmy (reseni pro odpadove spolecnosti end-to-end).
-- Realisticka cesta k rychlemu MVP pri vyuziti stavajicich systemu.
+### Prinosy
+- Vyssi efektivita uzivatelu.
+- Lepsi datova transparentnost a rychlejsi orientace ve stavu procesu.
+- Soulad se strategickym zamerenim na odpadove spolecnosti.
+- Realisticke doruceni hodnoty pri omezenych kapacitach.
 
-## Rizika
-- Chybi detailni system landscape a API kontrakty.
-- Nejasny primarni uzivatel MVP a prioritni datove potreby.
-- Riziko scope creep a integracnich zdrzeni.
+### Rizika
+- Nejasne API kontrakty a datove vlastnictvi.
+- Neuzavreny vyber primarniho uzivatele a MVP use-case.
+- Riziko scope creep pod tlakem rychleho doruceni.
 
-## Doporuceni
-- Potvrdit MVP scope: uzivatel, use-case, povinne integrace.
-- Uzavrit minimalni integracni a datovy kontrakt pro 1. fazi.
-- Realizovat iterativne s jasnymi metrikami uspechu navazanymi na business KPI.
+### Doporuceni
+- Uzavrit MVP rozhodnuti pred implementaci (uzivatel, use-case, integrace, data).
+- Dodat prvni iteraci v omezenem rozsahu a validovat na pilotu.
+- Rizika ridit pres formalni API/datove kontrakty a NFR baseline.
+
+## Predpoklady
+- Predpoklad: Nadstavbovy pristup je organizacne i technicky preferovana cesta pro rychle MVP.
 
 ## Otevrene otazky
 - Kdo je primarni uzivatel MVP?
-- Ktere integrace jsou povinne v prvni fazi?
-- Ktera data jsou prioritni pro dashboard a rozhodovani?
+- Ktere integrace a data jsou povinne pro prvni release?
+- Jaky je cilovy termin pilotniho nasazeni?
 
 ## Zdroje
 - outputs/requirements_draft.md
 - outputs/architecture_draft.md
 - outputs/engineering_review.md
+- outputs/synthesis.md
+- outputs/delivery_plan.md

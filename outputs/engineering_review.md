@@ -1,30 +1,33 @@
 ﻿# Engineering Review
 
-## Technicka proveditelnost
-- Navrh je proveditelny, protoze stavi na existujicich systemech a REST integracich.
-- Nejvetsi blokator je nekompletni vstup: chybi detailni landscape a API kontrakty.
+### Technicka proveditelnost
+- Navrh je proveditelny jako MVP, pokud zustane omezenej na nadstavbovy pristup nad existujicimi systemy.
+- Nejvetsi nejistoty jsou v integracnich detailech a neuzavrenem scope.
 
-## Slozitost implementace
-- Stredni az vyssi slozitost kvuli orchestraci workflow napric vice produkty.
-- Stredni slozitost pro dashboard agregujici data z vice zdroju.
-- Vyssi slozitost hrozi pri nejasnem datovem vlastnictvi a rozdilnych modelech entit.
+### Slozitost implementace
+- Integracni vrstva: stredni slozitost (vice systemu, odlisna data).
+- Unified UI + orchestrace: stredni az vyssi slozitost podle poctu scenaru v MVP.
+- Dashboard agregace: stredni slozitost, citliva na kvalitu zdrojovych dat.
 
-## Rizika
-- Riziko chybneho scope MVP bez jasnych prioritnich use-cases.
-- Riziko integracnich zpozdeni (nejasne povinne integrace v 1. fazi).
-- Riziko nekonzistence dat mezi systemy.
-- Riziko provoznich problemu bez definovanych NFR (SLA, monitoring, audit).
+### Rizika
+- Integracni riziko: nejasne povinne integrace a neoverene kontrakty.
+- Datove riziko: nejasny source of truth.
+- Scope riziko: tlak na rychly release muze zvetsit MVP nad realnou kapacitu.
+- Provozni riziko: chybi konkretni NFR metriky a akceptacni limity.
 
-## Doporuceni
-- Nejdriv potvrdit 1-2 hlavni MVP use-cases a primarni roli uzivatele.
-- Sepsat minimalni integracni kontrakt pro MVP (endpointy, chyby, latence).
-- Zavest jednoduche mapovani datovych entit a source-of-truth tabulku.
-- Dodavat iterativne: nejdriv unified UI + 1 dashboard view + minimum automatizace.
+### Doporuceni
+- Omezit MVP na 1 hlavni use-case, 1 dashboard pohled a 1 priorizovanou automatizaci.
+- Pred implementaci potvrdit API kontrakty povinnych integraci.
+- Definovat source-of-truth mapu pro MVP entity.
+- Zavest minimalni NFR baseline (latence, dostupnost, chybovost).
+
+## Predpoklady
+- Predpoklad: Tym dokaze realizovat MVP inkrementalne bez rozsahleho refaktoringu legacy systemu.
 
 ## Otevrene otazky
-- Ktere integrace jsou absolutne nutne pro prvni release?
-- Jake jsou meritelne vykonnostni cile dashboardu?
-- Jaka je cilova observabilita (logy, metriky, tracing)?
+- Ktery use-case bude implementovan jako prvni?
+- Jaka je pozadovana latence dashboardu pro MVP?
+- Kdo je odpovedny za schvaleni integracnich kontraktu?
 
 ## Zdroje
 - outputs/architecture_draft.md
