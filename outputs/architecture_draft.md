@@ -1,26 +1,37 @@
 ﻿# Architecture Draft
 
-## Stav podkladů
-- Bez vstupních faktů nelze navrhnout validní cílovou architekturu.
+## Prehled architektury
+Navrh je orientovan na lehkou orchestracni vrstvu nad existujicimi produkty (FLEETWARE, ROAD PLAN, PASPORT), aby bylo mozne dorucit jednotne UI, dashboard a postupnou automatizaci bez nahrazovani stavajicich systemu.
 
-## Současný stav (AS-IS)
-- Neznámý.
+## Hlavni komponenty
+- Unified UI: jednotne rozhrani pro hlavni workflow.
+- Workflow/Orchestration layer: ridi kroky procesu napric systemy.
+- Integration layer (REST): vola existujici API stavajicich produktu.
+- Read model pro dashboard: agreguje klicova data pro centralni pohled.
 
-## Cílový stav (TO-BE)
-- Nelze navrhnout bez požadavků a systémového kontextu.
+## Integrace
+- FLEETWARE: zdroj pozicnich dat/udalosti a prav uzivatelu (podle kontextu).
+- ROAD PLAN: planovani a vykony.
+- PASPORT: data o nadobach, vysypech, zakaznicich/smlouvach.
+- Protokol: REST API (jedine explicitne potvrzene rozhrani).
 
-## Integrace a data
-- Neznámé integrační systémy, rozhraní, datové toky i datové vlastnictví.
+## Datove toky
+- Tok 1: UI -> orchestrace -> REST volani do stavajicich systemu -> odpoved do UI.
+- Tok 2: Data ze stavajicich systemu -> agregace do dashboard read modelu -> dashboard.
+- Tok 3: Uzivatelske akce v UI -> orchestrace automatizovanych rutin -> zapis/vyvolani ve zdrojovych systemech.
 
-## Bezpečnost a provoz
-- Neznámé požadavky na IAM, audit, monitoring, DR, observabilitu.
+## Technicka rizika
+- Chybi detailni system landscape a kontrakty API.
+- Nejasne vlastnictvi dat a "source of truth" mezi produkty.
+- Riziko scope creep kvuli tlaku na rychle MVP.
+- Riziko vykonnosti dashboardu pri agregaci dat z vice systemu.
 
-## Rizika
-- Hlavní riziko: rozhodování bez dat by vedlo k nevalidní architektuře.
+## Otevrene otazky
+- Jaky je cilovy autentizacni/autorizacni model napric systemy?
+- Ktere endpointy jsou stabilni a podporovane pro MVP?
+- Ma byt dashboard near-real-time, nebo periodicky refresh?
+- Kde bude provozovana orchestrace (stavajici stack vs. nova sluzba)?
 
-## Otevřené otázky
-- Jaké systémy jsou součástí landscape a jak spolu komunikují?
-- Jaké jsou integrační protokoly a SLA mezi systémy?
-- Jaké jsou limity škálování a výkonu?
-- Jaké regulatorní/compliance požadavky musí řešení splnit?
-- Jaké technologické standardy jsou v organizaci závazné?
+## Zdroje
+- outputs/requirements_draft.md
+- outputs/knowledge_context.md
